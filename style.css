@@ -1,0 +1,146 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f8fc;
+  --card: #ffffff;
+  --ink: #13223d;
+  --muted: #5d6a80;
+  --line: #d8e0ee;
+  --primary: #2f65f5;
+  --ok: #157347;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+header {
+  padding: 2rem 1.2rem 1rem;
+  text-align: center;
+}
+
+header p {
+  margin: 0.5rem auto 0;
+  max-width: 640px;
+  color: var(--muted);
+}
+
+main {
+  width: min(1100px, 95vw);
+  margin: 0 auto 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(29, 58, 122, 0.06);
+}
+
+.stack {
+  display: grid;
+  gap: 0.55rem;
+}
+
+label {
+  font-size: 0.92rem;
+  display: grid;
+  gap: 0.3rem;
+  color: var(--muted);
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  background: #e8edff;
+  color: #23419e;
+  font-weight: 600;
+}
+
+button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+button.ghost {
+  background: #f3f5f9;
+  color: #4a556b;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0.75rem 0;
+}
+
+.list {
+  margin: 0.7rem 0 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.list li {
+  color: #324563;
+}
+
+.empty {
+  list-style: none;
+  margin-left: -1.25rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.log {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  min-height: 170px;
+  max-height: 300px;
+  overflow: auto;
+  padding: 0.6rem;
+  display: grid;
+  gap: 0.45rem;
+  background: #fbfcff;
+}
+
+.log p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.log .ok {
+  color: var(--ok);
+}
+
+code {
+  background: #edf1ff;
+  border-radius: 4px;
+  padding: 0.1rem 0.25rem;
+}
