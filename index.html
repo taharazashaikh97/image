@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Automation App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Call Automation App</h1>
+      <p>Build contact lists, generate call scripts, and run outbound call sessions.</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>1) Contacts</h2>
+        <form id="contact-form" class="stack">
+          <label>
+            Name
+            <input id="contact-name" required placeholder="Jordan Lee" />
+          </label>
+          <label>
+            Phone
+            <input id="contact-phone" required placeholder="+1 555 0100" />
+          </label>
+          <label>
+            Company
+            <input id="contact-company" placeholder="Acme Inc." />
+          </label>
+          <button type="submit">Add contact</button>
+        </form>
+        <ul id="contact-list" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>2) Script templates</h2>
+        <form id="template-form" class="stack">
+          <label>
+            Template name
+            <input id="template-name" required placeholder="Initial outreach" />
+          </label>
+          <label>
+            Message
+            <textarea id="template-body" rows="5" required placeholder="Hi {{name}}, this is Alex from {{company}}..."></textarea>
+          </label>
+          <small>Use placeholders: <code>{{name}}</code>, <code>{{company}}</code>, <code>{{phone}}</code>.</small>
+          <button type="submit">Save template</button>
+        </form>
+        <ul id="template-list" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>3) Queue builder</h2>
+        <form id="queue-form" class="stack">
+          <label>
+            Contact
+            <select id="queue-contact"></select>
+          </label>
+          <label>
+            Template
+            <select id="queue-template"></select>
+          </label>
+          <button type="submit">Add to queue</button>
+        </form>
+
+        <div class="row actions">
+          <button id="run-session" class="primary">Run session</button>
+          <button id="clear-queue" class="ghost">Clear queue</button>
+        </div>
+
+        <ol id="queue-list" class="list"></ol>
+      </section>
+
+      <section class="panel">
+        <h2>Session log</h2>
+        <div id="log" class="log"></div>
+      </section>
+    </main>
+
+    <template id="empty-state">
+      <li class="empty">No items yet.</li>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
